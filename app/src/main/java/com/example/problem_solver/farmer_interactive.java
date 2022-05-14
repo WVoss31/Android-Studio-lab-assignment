@@ -2,14 +2,13 @@ package com.example.problem_solver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.problem_solver.domains.farmer.FarmerProblem;
-import com.example.problem_solver.domains.puzzle.PuzzleProblem;
 import com.example.problem_solver.framework.graph.Vertex;
 import com.example.problem_solver.framework.problem.State;
 import com.example.problem_solver.framework.solution.AStarSolver;
@@ -18,25 +17,26 @@ import com.example.problem_solver.framework.solution.SolvingAssistant;
 
 public class farmer_interactive extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_farmer_interactive);
         problem = new FarmerProblem();
         //creating and setting up the states
-        currentView = (TextView) findViewById(R.id.farmer_currentState);
-        finalView = (TextView) findViewById(R.id.farmer_GoalState);
+        currentView = findViewById(R.id.farmer_currentState);
+        TextView finalView = findViewById(R.id.farmer_GoalState);
         currentView.setText(problem.getInitialState().toString());
         finalView.setText(problem.getFinalState().toString());
 
         //initializing the farmer message and move counts
-        message = (TextView) findViewById(R.id.farmer_message);
-        count = (TextView) findViewById(R.id.farmer_move_counter);
+        message = findViewById(R.id.farmer_message);
+        count = findViewById(R.id.farmer_move_counter);
 
         //gonna work with the move buttons now
-        movesView = (LinearLayout) findViewById(R.id.farmer_moves);
+        movesView = findViewById(R.id.farmer_moves);
         assistant = new SolvingAssistant(problem);
-        reset = (Button) findViewById(R.id.farmer_reset);
+        Button reset = findViewById(R.id.farmer_reset);
         reset.setOnClickListener(e -> {
             assistant.reset();
             currentView.setText(problem.getInitialState().toString());
@@ -44,17 +44,17 @@ public class farmer_interactive extends AppCompatActivity {
             count.setText(Integer.toString(0));
         });
         makeMoveButtons();
-        solve = (Button) findViewById(R.id.farmer_solve);
+        solve = findViewById(R.id.farmer_solve);
         solve.setOnClickListener(e -> {
             next.setEnabled(true);
             solve.setEnabled(false);
             A_Star = new AStarSolver(problem);
             A_Star.solve();
             solution = A_Star.getSolution();
-            Stats.setText(A_Star.getStatistics().toString());
+            //Stats.setText(A_Star.getStatistics().toString());
         });
 
-        next = (Button) findViewById(R.id.farmer_next);
+        next = findViewById(R.id.farmer_next);
         next.setEnabled(false);
         next.setOnClickListener(e -> {
             Vertex v = solution.next();
@@ -70,6 +70,7 @@ public class farmer_interactive extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void makeMoveButtons() {
         problem.getMover().getMoveNames().forEach(e -> {
             Button button = new Button(movesView.getContext());
@@ -77,14 +78,14 @@ public class farmer_interactive extends AppCompatActivity {
                 button.setTag(e);
                 assistant.tryMove(e);
                 if (!assistant.isMoveLegal()) {
-                    message.setText("Illegal Move");
+                    message.setText(R.string.illegalMove);
                 }
                 else {
                     NumCount++;
                     count.setText(Integer.toString(NumCount));
                 }
                 if (problem.getCurrentState().equals(problem.getFinalState())) {
-                    message.setText("Congratulations!");
+                    message.setText(R.string.congrats);
                     next.setEnabled(false);
                 }
                 currentView.setText(problem.getCurrentState().toString());
@@ -100,9 +101,10 @@ public class farmer_interactive extends AppCompatActivity {
     private TextView message;
     private TextView count;
     private int NumCount;
-    private Button next, solve, reset;
-    private TextView currentView, finalView;
+    private Button next;
+    private Button solve;
+    private TextView currentView;
     private AStarSolver A_Star;
-    private TextView Stats;
+    //private TextView Stats;
     private Solution solution;
 }

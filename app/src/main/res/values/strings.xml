@@ -22,9 +22,10 @@
     <string name="count">0</string>
     <string name="current_state">TextView</string>
     <string name="final_state">TextView</string>
-    <string name="message"></string>
     <string name="puzzle_reset_button_text">RESET</string>
     <string name="solveButtonString">SOLVE</string>
     <string name="nextButtonString">NEXT</string>
     <string name="benchmarksLabel_puzzle">Benchmarks:</string>
+    <string name="illegalMove">Illegal Move</string>
+    <string name="congrats">Congratulations!</string>
 </resources>
