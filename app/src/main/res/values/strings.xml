@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Problem_Solver</string>
+    <string name="title">Welcome to the Problem Solver</string>
+    <string name="description">Please choose a problem:</string>
+    <string name="fwgc">FWGC</string>
+    <string name="_8_puzzle">8 Puzzle</string>
+    <string name="fwgctitle">Welcome to the FWGC Problem</string>
+    <string name="fwgcdescription">A farmer and his wolf, goat, and cabbage come to the edge of a river they wish to cross:</string>
+    <string name="fwgcrules">There is a boat at the river\'s edge tht only the farmer can row. The farmer can take at most one other object besides himself on a crossing, but if the wolf is left with the goat, the wolf will eat the goat; similarly, if the goat is left with the cabbage, the goat will eat the cabbage. Devise a sequence of crossings of the river so that all four characters arrive safely on the other side:</string>
+    <string name="fwgcButton">Begin FWGC Problem</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="puzzleDescription">You are given a board in which numbered tiles can slide around. There is one blank space that holds no tile. Here is an example:</string>
+    <string name="PuzzleTitle">Welcome to the 8-Puzzle Problem</string>
+    <string name="PuzzleRules">A legal move consists of sliding a tile into the blank space if the tile is adjacent to it. The goal is to move tiles around until the board looks like this:</string>
+    <string name="PuzzleButton">Begin 8-Puzzle Problem</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="current_state_label">Current State</string>
+    <string name="Final_State_Label">Goal State</string>
+    <string name="moves_label">Moves</string>
+    <string name="count">0</string>
+    <string name="current_state">TextView</string>
+    <string name="final_state">TextView</string>
+    <string name="message"></string>
+    <string name="puzzle_reset_button_text">RESET</string>
+    <string name="solveButtonString">SOLVE</string>
+    <string name="nextButtonString">NEXT</string>
+    <string name="benchmarksLabel_puzzle">Benchmarks:</string>
+</resources>
