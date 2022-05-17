@@ -28,4 +28,5 @@
     <string name="benchmarksLabel_puzzle">Benchmarks:</string>
     <string name="illegalMove">Illegal Move</string>
     <string name="congrats">Congratulations!</string>
+    <string name="message"> </string>
 </resources>

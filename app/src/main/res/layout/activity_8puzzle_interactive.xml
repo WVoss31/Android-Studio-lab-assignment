@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/message"
+        android:text="@string/congrats"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FF3737"
@@ -108,7 +108,7 @@
         android:layout_marginTop="28dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_state_text_area"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/current_state_text_area"/>
 
     <LinearLayout
         android:id="@+id/benchVbox"

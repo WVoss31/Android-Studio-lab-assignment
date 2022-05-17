@@ -79,7 +79,7 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/farmer_currentState"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/farmer_currentState"/>
 
     <TextView
         android:id="@+id/farmer_move_counter"
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="21dp"
-        android:text="@string/message"
+        android:text="@string/congrats"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FF1818"
